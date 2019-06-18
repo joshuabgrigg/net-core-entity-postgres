@@ -1,0 +1,14 @@
+/home/josh/Code/learning/dot net core/net-core-entity-postgres/app/bin/Debug/netcoreapp2.2/app.deps.json
+/home/josh/Code/learning/dot net core/net-core-entity-postgres/app/bin/Debug/netcoreapp2.2/app.runtimeconfig.json
+/home/josh/Code/learning/dot net core/net-core-entity-postgres/app/bin/Debug/netcoreapp2.2/app.runtimeconfig.dev.json
+/home/josh/Code/learning/dot net core/net-core-entity-postgres/app/bin/Debug/netcoreapp2.2/app.dll
+/home/josh/Code/learning/dot net core/net-core-entity-postgres/app/bin/Debug/netcoreapp2.2/app.pdb
+/home/josh/Code/learning/dot net core/net-core-entity-postgres/app/obj/Debug/netcoreapp2.2/app.csprojAssemblyReference.cache
+/home/josh/Code/learning/dot net core/net-core-entity-postgres/app/obj/Debug/netcoreapp2.2/app.csproj.CoreCompileInputs.cache
+/home/josh/Code/learning/dot net core/net-core-entity-postgres/app/obj/Debug/netcoreapp2.2/app.RazorAssemblyInfo.cache
+/home/josh/Code/learning/dot net core/net-core-entity-postgres/app/obj/Debug/netcoreapp2.2/app.RazorAssemblyInfo.cs
+/home/josh/Code/learning/dot net core/net-core-entity-postgres/app/obj/Debug/netcoreapp2.2/app.AssemblyInfoInputs.cache
+/home/josh/Code/learning/dot net core/net-core-entity-postgres/app/obj/Debug/netcoreapp2.2/app.AssemblyInfo.cs
+/home/josh/Code/learning/dot net core/net-core-entity-postgres/app/obj/Debug/netcoreapp2.2/app.RazorTargetAssemblyInfo.cache
+/home/josh/Code/learning/dot net core/net-core-entity-postgres/app/obj/Debug/netcoreapp2.2/app.dll
+/home/josh/Code/learning/dot net core/net-core-entity-postgres/app/obj/Debug/netcoreapp2.2/app.pdb

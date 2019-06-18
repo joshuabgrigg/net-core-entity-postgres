@@ -1,0 +1,17 @@
+/home/josh/Code/learning/dot net core/net-core-entity-postgres/test/bin/Debug/netcoreapp2.2/NUnit3.TestAdapter.dll
+/home/josh/Code/learning/dot net core/net-core-entity-postgres/test/bin/Debug/netcoreapp2.2/NUnit3.TestAdapter.pdb
+/home/josh/Code/learning/dot net core/net-core-entity-postgres/test/bin/Debug/netcoreapp2.2/nunit.engine.netstandard.dll
+/home/josh/Code/learning/dot net core/net-core-entity-postgres/test/bin/Debug/netcoreapp2.2/test.deps.json
+/home/josh/Code/learning/dot net core/net-core-entity-postgres/test/bin/Debug/netcoreapp2.2/test.runtimeconfig.json
+/home/josh/Code/learning/dot net core/net-core-entity-postgres/test/bin/Debug/netcoreapp2.2/test.runtimeconfig.dev.json
+/home/josh/Code/learning/dot net core/net-core-entity-postgres/test/bin/Debug/netcoreapp2.2/test.dll
+/home/josh/Code/learning/dot net core/net-core-entity-postgres/test/bin/Debug/netcoreapp2.2/test.pdb
+/home/josh/Code/learning/dot net core/net-core-entity-postgres/test/bin/Debug/netcoreapp2.2/app.dll
+/home/josh/Code/learning/dot net core/net-core-entity-postgres/test/bin/Debug/netcoreapp2.2/app.pdb
+/home/josh/Code/learning/dot net core/net-core-entity-postgres/test/obj/Debug/netcoreapp2.2/test.csprojAssemblyReference.cache
+/home/josh/Code/learning/dot net core/net-core-entity-postgres/test/obj/Debug/netcoreapp2.2/test.csproj.CoreCompileInputs.cache
+/home/josh/Code/learning/dot net core/net-core-entity-postgres/test/obj/Debug/netcoreapp2.2/test.AssemblyInfoInputs.cache
+/home/josh/Code/learning/dot net core/net-core-entity-postgres/test/obj/Debug/netcoreapp2.2/test.AssemblyInfo.cs
+/home/josh/Code/learning/dot net core/net-core-entity-postgres/test/obj/Debug/netcoreapp2.2/test.csproj.CopyComplete
+/home/josh/Code/learning/dot net core/net-core-entity-postgres/test/obj/Debug/netcoreapp2.2/test.dll
+/home/josh/Code/learning/dot net core/net-core-entity-postgres/test/obj/Debug/netcoreapp2.2/test.pdb
