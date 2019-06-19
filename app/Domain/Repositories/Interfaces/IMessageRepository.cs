@@ -1,4 +1,6 @@
-public interface IMessageRepository: IRepository<Message>
+using System;
+
+public interface IMessageRepository: IRepository<Message>, IPrimaryIDRepository<Guid, Message>
 {
     
 }

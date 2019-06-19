@@ -7,8 +7,10 @@ public class HomeController : BaseController
     public HomeController()
     {
     }
+
+    [Route("/")]
     public ActionResult Index()
     {
-        return Redirect(Url.Action("index", "messages"));
+        return Redirect(Url.Action("", "messages"));
     }
 }

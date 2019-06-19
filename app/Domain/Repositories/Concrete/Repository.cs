@@ -19,7 +19,7 @@ public abstract class Repository<T> : IRepository<T> where T : class
 
         return item;
     }
-    public IEnumerable<T> FindAll(Func<T, bool> predicate)
+    protected IEnumerable<T> FindAll(Func<T, bool> predicate)
     {
         return _context.Set<T>().AsNoTracking().Where(predicate).ToList();
     }
@@ -31,6 +31,7 @@ public abstract class Repository<T> : IRepository<T> where T : class
         this._context.Remove(item);
         this._context.SaveChanges();
     }
+
     public T Update(T item)
     {
         this._context.Update(item);
