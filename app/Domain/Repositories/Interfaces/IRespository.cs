@@ -1,15 +1,16 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 public interface IRepository<T> where T : class
 {
-    T Add(T item);
-    void Remove(T item);
-    T Update(T item);
-    IEnumerable<T> FindAll();
+    Task<T> Add(T item);
+    Task Remove(T item);
+    Task<T>  Update(T item);
+    Task<IEnumerable<T>> FindAll();
 }
 
 public interface IPrimaryIDRepository<ID, Model> {
-    Model Find(ID id);
-    void Remove(ID id);
+    Task<Model> Find(ID id);
+    Task Remove(ID id);
 }

@@ -33,7 +33,7 @@ namespace app
 
             app.UseMvc((routes) =>
             {
-                routes.MapRoute("default", "{controller=Home}");
+                // routes.MapRoute("default", "{controller=api/messages}");
             });
         }
     }

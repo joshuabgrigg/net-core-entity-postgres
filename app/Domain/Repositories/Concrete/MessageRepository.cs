@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using System.Threading.Tasks;
 
 public class MessageRepository : Repository<Message>, IMessageRepository
 {
@@ -7,16 +8,16 @@ public class MessageRepository : Repository<Message>, IMessageRepository
     {
     }
 
-    public Message Find(Guid id)
+    public async Task<Message> Find(Guid id)
     {
-        return this.FindAll(m => m.MessageID == id).FirstOrDefault();
+        return (await this.FindAll(m => m.MessageID == id)).FirstOrDefault();
     }
 
-    public void Remove(Guid id)
+    public async Task Remove(Guid id)
     {
-        var message = this.FindAll(m => m.MessageID == id).FirstOrDefault();
+        var message = await this.Find(id);
         if(message != null) {
-            this.Remove(message);
+            await this.Remove(message);
         }
     }
 }

@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using static Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions;
 
 public abstract class Repository<T> : IRepository<T> where T : class
 {
@@ -12,30 +14,31 @@ public abstract class Repository<T> : IRepository<T> where T : class
         this._context = context;
     }
 
-    public T Add(T item)
+    public async Task<T> Add(T item)
     {
-        this._context.Set<T>().Add(item);
-        this._context.SaveChanges();
+        await this._context.Set<T>().AddAsync(item);
+        await this._context.SaveChangesAsync();
 
         return item;
     }
-    protected IEnumerable<T> FindAll(Func<T, bool> predicate)
+    protected async Task<IEnumerable<T>> FindAll(Func<T, bool> predicate)
     {
-        return _context.Set<T>().AsNoTracking().Where(predicate).ToList();
+        var messages = _context.Set<T>().AsQueryable().Where(predicate).ToAsyncEnumerable();
+        return await messages.ToList();
     }
-    public IEnumerable<T> FindAll()
+    public async Task<IEnumerable<T>> FindAll()
     {
-        return _context.Set<T>().AsNoTracking().ToList();
+        return await _context.Set<T>().ToListAsync();
     }
-    public void Remove(T item) {
+    public async Task Remove(T item) {
         this._context.Remove(item);
-        this._context.SaveChanges();
+        await this._context.SaveChangesAsync();
     }
 
-    public T Update(T item)
+    public async Task<T> Update(T item)
     {
         this._context.Update(item);
-        this._context.SaveChanges();
+        await this._context.SaveChangesAsync();
 
         return item;
     }

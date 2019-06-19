@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
 public class MessagesController : BaseController
@@ -12,51 +12,72 @@ public class MessagesController : BaseController
         this._messageRepository = messageRepository;
     }
 
-    [HttpPost]
-    [Route("[controller]")]
-    public Message Post(string text)
+    // GET: api/Messages
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<Message>>> Get()
     {
-        var message = this._messageRepository.Add(new Message()
+        var messages = await this._messageRepository.FindAll();
+        return Ok(messages);
+    }
+
+    // GET: api/Messages/<id>
+    [HttpGet("{id}")]
+    public async Task<ActionResult<Message>> Get(Guid id)
+    {
+        var message = await this._messageRepository.Find(id);
+
+        if (message == null)
         {
-            Text = text
-        });
-
-        return message;
-    }
-
-    [HttpGet]
-    [Route("[controller]/")]
-    public List<Message> Index()
-    {
-        return this._messageRepository.FindAll().ToList(); ;
-    }
-
-
-    [HttpGet]
-    [Route("[controller]/{id}")]
-    public Message Get(Guid id)
-    {
-        return this._messageRepository.Find(id);
-    }
-
-    [HttpPut]
-    [Route("[controller]/{id}")]
-    public Message Update(Guid id, string text)
-    {
-        var message = this._messageRepository.Find(id);
-
-        if(message != null) {
-            message.Text = text;
-            message = this._messageRepository.Update(message);
+            return NotFound();
         }
-
-        return message;
+        else
+        {
+            return Ok(message);
+        }
     }
 
-    [HttpDelete]
-    [Route("[controller]/{id}")]
-    public void Delete(Guid id)
+    // POST: api/Messages
+    [HttpPost]
+    public async Task<ActionResult<Message>> Post(string text)
     {
-        this._messageRepository.Remove(id);
+        return Ok(await this._messageRepository.Add(new Message() { Text = text }));
+    }
+
+    // PUT: api/Messages/<id>
+    [HttpPut("{id}")]
+    public async Task<ActionResult<Message>> Put(Guid id, string text)
+    {
+        var message = await this._messageRepository.Find(id);
+        if (message == null)
+        {
+            return NotFound();
+        }
+        else
+        {
+            message.Text = text;
+            await this._messageRepository.Update(message);
+            return Ok(message);
+        }
+    }
+
+    // DELETE: api/Messages/<id>
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteProduct(Guid id)
+    {
+        var message = await _messageRepository.Find(id);
+        if (message == null)
+        {
+            return NotFound();
+        }
+        else
+        {
+            await _messageRepository.Remove(message);
+            return NoContent();
+        }
+    }
+
+    private bool ProductExists(Guid id)
+    {
+        return _messageRepository.Find(id) != null;
     }
 }
