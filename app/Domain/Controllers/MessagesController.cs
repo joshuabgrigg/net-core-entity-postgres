@@ -62,7 +62,7 @@ public class MessagesController : BaseController
 
     // DELETE: api/Messages/<id>
     [HttpDelete("{id}")]
-    public async Task<IActionResult> DeleteProduct(Guid id)
+    public async Task<IActionResult> Delete(Guid id)
     {
         var message = await _messageRepository.Find(id);
         if (message == null)
@@ -76,8 +76,10 @@ public class MessagesController : BaseController
         }
     }
 
-    private bool ProductExists(Guid id)
+    [HttpGet]
+    [Route("echo/{content}")]
+    public IActionResult Echo(string content)
     {
-        return _messageRepository.Find(id) != null;
+        return Ok(content);
     }
 }
